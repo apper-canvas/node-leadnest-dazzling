@@ -803,10 +803,10 @@ function LeadDetailView({ lead, onClose, onStatusChange, onUpdate, onDelete, pip
           </button>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-700 transition-colors"
             className="p-2 rounded-xl text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-
+          >
             <ApperIcon name="X" className="w-5 h-5" />
+
           </button>
         </div>
       </div>
