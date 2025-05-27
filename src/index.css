@@ -1,6 +1,4 @@
-/* Import react-toastify CSS before Tailwind to prevent PostCSS conflicts */
-@import 'react-toastify/dist/ReactToastify.css';
-
+/* Tailwind CSS imports */
 
 @tailwind base;
 @tailwind components;
