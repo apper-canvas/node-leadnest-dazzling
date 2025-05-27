@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import MainFeature from '../components/MainFeature'
 import ApperIcon from '../components/ApperIcon'
 
+import ApperIcon from '../components/ApperIcon'
+
 function Home() {
   const [darkMode, setDarkMode] = useState(false)
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     if (darkMode) {
@@ -66,18 +71,23 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex space-x-1 sm:space-x-8 overflow-x-auto scrollbar-hide py-3">
             {[
-              { name: 'Pipeline', icon: 'BarChart3', active: true },
-              { name: 'Leads', icon: 'Users', active: false },
-              { name: 'Properties', icon: 'Building2', active: false },
-              { name: 'Tasks', icon: 'CheckSquare', active: false },
-              { name: 'Reports', icon: 'TrendingUp', active: false }
+              { name: 'Pipeline', icon: 'BarChart3', active: true, path: '/' },
+              { name: 'Leads', icon: 'Users', active: false, path: '/leads' },
+              { name: 'Properties', icon: 'Building2', active: false, path: '/properties' },
+              { name: 'Tasks', icon: 'CheckSquare', active: false, path: '/tasks' },
+              { name: 'Reports', icon: 'TrendingUp', active: false, path: '/reports' }
             ].map((item, index) => (
               <motion.button
                 key={item.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                onClick={() => {
+                  if (item.path) {
+                    navigate(item.path)
+                  }
+                }}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap cursor-pointer ${
                   item.active 
                     ? 'bg-primary text-white shadow-lg' 
                     : 'text-surface-600 dark:text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-700 hover:text-surface-800 dark:hover:text-surface-200'
@@ -88,7 +98,7 @@ function Home() {
               </motion.button>
             ))}
           </div>
-        </div>
+
       </motion.nav>
 
       {/* Main Content */}
