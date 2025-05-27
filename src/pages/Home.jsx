@@ -97,6 +97,8 @@ function Home() {
             ))}
           </div>
 
+        </div>
+
       </motion.nav>
 
       {/* Main Content */}
