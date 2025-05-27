@@ -162,11 +162,13 @@ function MainFeature() {
         className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0"
       >
         <div>
-          <h1 className="text-2xl lg:text-3xl font-bold text-surface-800 dark:text-surface-200">
+          <h1 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-gray-200">
             Sales Pipeline
+
           </h1>
-          <p className="text-surface-600 dark:text-surface-400 mt-1">
+          <p className="text-gray-600 dark:text-gray-400 mt-1">
             Manage and track your real estate leads through the sales process
+
           </p>
         </div>
         
@@ -174,6 +176,7 @@ function MainFeature() {
           <button
             onClick={() => setShowAddLead(true)}
             className="btn-primary flex items-center justify-center space-x-2 whitespace-nowrap"
+
           >
             <ApperIcon name="Plus" className="w-4 h-4" />
             <span>Add Lead</span>
@@ -181,7 +184,8 @@ function MainFeature() {
           
           <div className="flex space-x-3">
             <div className="relative flex-1 sm:flex-initial">
-              <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-surface-400" />
+              <ApperIcon name="Search" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+
               <input
                 type="text"
                 placeholder="Search leads..."
@@ -225,8 +229,9 @@ function MainFeature() {
             onDrop={(e) => handleDrop(e, stage.status)}
           >
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-surface-800 dark:text-surface-200 text-sm">
+              <h3 className="font-semibold text-gray-800 dark:text-gray-200 text-sm">
                 {stage.name}
+
               </h3>
               <span className={`status-badge status-${stage.status}`}>
                 {getLeadsByStatus(stage.status).length}
@@ -249,13 +254,16 @@ function MainFeature() {
                     onClick={() => setSelectedLead(lead)}
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h4 className="font-medium text-surface-800 dark:text-surface-200 text-sm">
+                      <h4 className="font-medium text-gray-800 dark:text-gray-200 text-sm">
                         {lead.firstName} {lead.lastName}
+
                       </h4>
-                      <ApperIcon name="MoreVertical" className="w-4 h-4 text-surface-400" />
+                      <ApperIcon name="MoreVertical" className="w-4 h-4 text-gray-400" />
+
                     </div>
                     
-                    <div className="space-y-1 text-xs text-surface-600 dark:text-surface-400">
+                    <div className="space-y-1 text-xs text-gray-600 dark:text-gray-400">
+
                       <div className="flex items-center space-x-1">
                         <ApperIcon name="Mail" className="w-3 h-3" />
                         <span className="truncate">{lead.email}</span>
@@ -271,10 +279,12 @@ function MainFeature() {
                     </div>
                     
                     <div className="mt-3 flex items-center justify-between">
-                      <span className="text-xs text-surface-500 dark:text-surface-400">
+                      <span className="text-xs text-gray-500 dark:text-gray-400">
+
                         {lead.propertyPreferences.type}
                       </span>
-                      <span className="text-xs bg-surface-100 dark:bg-surface-700 px-2 py-1 rounded">
+                      <span className="text-xs bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">
+
                         {lead.source}
                       </span>
                     </div>
@@ -373,12 +383,14 @@ function AddLeadForm({ onSubmit, onCancel }) {
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold text-surface-800 dark:text-surface-200">
+        <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
           Add New Lead
+
         </h2>
         <button
           onClick={onCancel}
-          className="p-2 rounded-xl text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-700 transition-colors"
+          className="p-2 rounded-xl text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+
         >
           <ApperIcon name="X" className="w-5 h-5" />
         </button>
@@ -387,8 +399,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               First Name *
+
             </label>
             <input
               type="text"
@@ -399,8 +412,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Last Name *
+
             </label>
             <input
               type="text"
@@ -414,8 +428,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Email *
+
             </label>
             <input
               type="email"
@@ -426,8 +441,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Phone
+
             </label>
             <input
               type="tel"
@@ -440,8 +456,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Lead Source
+
             </label>
             <select
               value={formData.source}
@@ -454,8 +471,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Budget
+
             </label>
             <input
               type="number"
@@ -468,14 +486,16 @@ function AddLeadForm({ onSubmit, onCancel }) {
         </div>
 
         <div className="space-y-4">
-          <h3 className="text-lg font-medium text-surface-800 dark:text-surface-200">
+          <h3 className="text-lg font-medium text-gray-800 dark:text-gray-200">
             Property Preferences
+
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Property Type
+
               </label>
               <select
                 value={formData.propertyPreferences.type}
@@ -494,8 +514,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Bedrooms
+
               </label>
               <select
                 value={formData.propertyPreferences.bedrooms}
@@ -514,8 +535,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Bathrooms
+
               </label>
               <select
                 value={formData.propertyPreferences.bathrooms}
@@ -536,8 +558,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Preferred Location
+
             </label>
             <input
               type="text"
@@ -556,8 +579,9 @@ function AddLeadForm({ onSubmit, onCancel }) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-surface-700 dark:text-surface-300 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Notes
+
           </label>
           <textarea
             value={formData.notes}
@@ -567,7 +591,8 @@ function AddLeadForm({ onSubmit, onCancel }) {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3 pt-6 border-t border-surface-200 dark:border-surface-700">
+        <div className="flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-3 pt-6 border-t border-gray-200 dark:border-gray-700">
+
           <button type="button" onClick={onCancel} className="btn-ghost">
             Cancel
           </button>
@@ -595,16 +620,19 @@ function LeadDetailView({ lead, onClose, onStatusChange, pipelineStages }) {
     <div className="p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-bold text-surface-800 dark:text-surface-200">
+          <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
             {lead.firstName} {lead.lastName}
+
           </h2>
-          <p className="text-surface-600 dark:text-surface-400">
+          <p className="text-gray-600 dark:text-gray-400">
             Lead Details & History
+
           </p>
         </div>
         <button
           onClick={onClose}
-          className="p-2 rounded-xl text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-700 transition-colors"
+          className="p-2 rounded-xl text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+
         >
           <ApperIcon name="X" className="w-5 h-5" />
         </button>
@@ -612,13 +640,15 @@ function LeadDetailView({ lead, onClose, onStatusChange, pipelineStages }) {
 
       <div className="space-y-6">
         {/* Status & Quick Actions */}
-        <div className="flex flex-wrap items-center justify-between gap-4 p-4 bg-surface-50 dark:bg-surface-700 rounded-xl">
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+
           <div className="flex items-center space-x-3">
             <span className={`status-badge status-${lead.status}`}>
               {pipelineStages.find(s => s.status === lead.status)?.name}
             </span>
-            <span className="text-sm text-surface-600 dark:text-surface-400">
+            <span className="text-sm text-gray-600 dark:text-gray-400">
               Created {format(lead.createdAt, 'MMM dd, yyyy')}
+
             </span>
           </div>
           
@@ -640,82 +670,108 @@ function LeadDetailView({ lead, onClose, onStatusChange, pipelineStages }) {
         {/* Contact Information */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-surface-800 dark:text-surface-200">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
               Contact Information
+
             </h3>
             
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <ApperIcon name="Mail" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="Mail" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Email</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">{lead.email}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Email</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">{lead.email}</p>
+
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
-                <ApperIcon name="Phone" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="Phone" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Phone</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">{lead.phone}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Phone</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">{lead.phone}</p>
+
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
-                <ApperIcon name="UserCheck" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="UserCheck" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Assigned Agent</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">{lead.assignedAgent}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Assigned Agent</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">{lead.assignedAgent}</p>
+
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
-                <ApperIcon name="Tag" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="Tag" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Source</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">{lead.source}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Source</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">{lead.source}</p>
+
                 </div>
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-surface-800 dark:text-surface-200">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
               Property Preferences
+
             </h3>
             
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <ApperIcon name="Building2" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="Building2" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Property Type</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">{lead.propertyPreferences.type}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Property Type</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">{lead.propertyPreferences.type}</p>
+
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
-                <ApperIcon name="BedDouble" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="BedDouble" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Bedrooms / Bathrooms</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Bedrooms / Bathrooms</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">
                     {lead.propertyPreferences.bedrooms} bed / {lead.propertyPreferences.bathrooms} bath
                   </p>
+
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
-                <ApperIcon name="MapPin" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="MapPin" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Preferred Location</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">{lead.propertyPreferences.location}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Preferred Location</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">{lead.propertyPreferences.location}</p>
+
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
-                <ApperIcon name="DollarSign" className="w-5 h-5 text-surface-400" />
+                <ApperIcon name="DollarSign" className="w-5 h-5 text-gray-400" />
+
                 <div>
-                  <p className="text-sm text-surface-600 dark:text-surface-400">Budget</p>
-                  <p className="font-medium text-surface-800 dark:text-surface-200">{formatCurrency(lead.budget)}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Budget</p>
+
+                  <p className="font-medium text-gray-800 dark:text-gray-200">{formatCurrency(lead.budget)}</p>
+
                 </div>
               </div>
             </div>
@@ -725,41 +781,51 @@ function LeadDetailView({ lead, onClose, onStatusChange, pipelineStages }) {
         {/* Notes */}
         {lead.notes && (
           <div>
-            <h3 className="text-lg font-semibold text-surface-800 dark:text-surface-200 mb-3">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
               Notes
+
             </h3>
-            <div className="p-4 bg-surface-50 dark:bg-surface-700 rounded-xl">
-              <p className="text-surface-700 dark:text-surface-300">{lead.notes}</p>
+            <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
+
+              <p className="text-gray-700 dark:text-gray-300">{lead.notes}</p>
+
             </div>
           </div>
         )}
 
         {/* Activity Timeline */}
         <div>
-          <h3 className="text-lg font-semibold text-surface-800 dark:text-surface-200 mb-3">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
             Recent Activity
+
           </h3>
           <div className="space-y-3">
-            <div className="flex items-center space-x-3 p-3 bg-surface-50 dark:bg-surface-700 rounded-xl">
+            <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
+
               <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center">
                 <ApperIcon name="UserPlus" className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               </div>
               <div>
-                <p className="font-medium text-surface-800 dark:text-surface-200">Lead created</p>
-                <p className="text-sm text-surface-600 dark:text-surface-400">
+                <p className="font-medium text-gray-800 dark:text-gray-200">Lead created</p>
+
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   {format(lead.createdAt, 'MMM dd, yyyy \'at\' h:mm a')}
+
                 </p>
               </div>
             </div>
             
-            <div className="flex items-center space-x-3 p-3 bg-surface-50 dark:bg-surface-700 rounded-xl">
+            <div className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-xl">
+
               <div className="w-8 h-8 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center">
                 <ApperIcon name="MessageSquare" className="w-4 h-4 text-green-600 dark:text-green-400" />
               </div>
               <div>
-                <p className="font-medium text-surface-800 dark:text-surface-200">Last contact</p>
-                <p className="text-sm text-surface-600 dark:text-surface-400">
+                <p className="font-medium text-gray-800 dark:text-gray-200">Last contact</p>
+
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   {format(lead.lastContact, 'MMM dd, yyyy \'at\' h:mm a')}
+
                 </p>
               </div>
             </div>
@@ -767,7 +833,8 @@ function LeadDetailView({ lead, onClose, onStatusChange, pipelineStages }) {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row justify-between space-y-3 sm:space-y-0 sm:space-x-3 pt-6 border-t border-surface-200 dark:border-surface-700">
+        <div className="flex flex-col sm:flex-row justify-between space-y-3 sm:space-y-0 sm:space-x-3 pt-6 border-t border-gray-200 dark:border-gray-700">
+
           <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
             <button className="btn-secondary flex items-center justify-center space-x-2">
               <ApperIcon name="Phone" className="w-4 h-4" />
